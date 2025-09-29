@@ -413,9 +413,9 @@ body {
 
 .happy-birthday-title {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40px;                /* đẩy tiêu đề lên trên cùng */
+  left: 39%;
+  transform: translateX(-50%); /* chỉ căn giữa ngang, không cần giữa dọc */
   font-size: 3rem;
   font-family: 'Dancing Script', cursive;
   color: #ff69b4;
@@ -423,4 +423,10 @@ body {
   z-index: 100;
   letter-spacing: 2px;
   animation: happyBirthdayFlash 2s infinite;
+}
+@media (max-width: 768px) {
+  .happy-birthday-title {
+    top: 20px;
+    font-size: 2rem;
+  }
 }
