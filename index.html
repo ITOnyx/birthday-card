@@ -1,83 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Happy Birthday</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./main.css">
-  <title>Some</title>
-  <style>
-    .recieve {
-      display: block !important;
-      position: relative !important;
-      z-index: 9999 !important;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
 </head>
+<audio src="./music/mucsic.mp3"></audio>
 <body>
   <div class="happy-birthday-title">🎉 Happy Birthday 🎉</div>
+
   <div class="startForm">
     <div class="startLetter">
       <div class="contentLetter"></div>
-      <img class="myAI" src="" alt="AI Image">
-      <div class="sticker"></div>
-      <button class="recieve" aria-label="Receive Gift"><i class="fa-solid fa-gift"></i></button>
-    </div>
-  </div>
+      <img class="myAI" src="./img/cute-young-boy-kid-wearing-vest-and-hat-free-png.png" alt="AI">
+      <div class="sticker">💌</div>
 
-  <div class="backgroundParty">
-    <img class="balloon1 balloon" src="./img/PNGkhothietke.net-02776.png" alt="Balloon 1">
-    <img class="balloon2 balloon" src="./img/PNGkhothietke.net-02776.png" alt="Balloon 2">
-    <img class="bannerParty" src="./img/makeupspa-kit-theme-happy-birthday-bunting-paper-banner-party-supply-261454.png" alt="Birthday Banner">
-    <div class="letterForm">
-      <input type="checkbox" id="mess">
-      <div class="content">
-        <div class="mainContent"></div>
-        <div class="img1"><img class="img" src="" alt="Content Image"></div>
+      <!-- Ẩn ban đầu -->
+      <div class="button-group">
+        <button id="agreeBtn" class="agree">Đồng ý</button>
+        <button id="disagreeBtn" class="disagree">Không đồng ý</button>
       </div>
-      <label class="designBox" for="mess"></label>
     </div>
   </div>
 
-  <script src="./index.js"></script>
-  <script>
-    const recieveBtn = document.querySelector('.recieve');
-    const contentLetter = document.querySelector('.contentLetter');
-    let isDragging = false;
-    let startY = 0;
-    let opened = false;
-
-    recieveBtn.addEventListener('mousedown', function(e) {
-      isDragging = true;
-      startY = e.clientY;
-      recieveBtn.style.transition = 'none';
-    });
-
-    document.addEventListener('mousemove', function(e) {
-      if (isDragging && !opened) {
-        let offset = e.clientY - startY;
-        recieveBtn.style.transform = `translateX(-50%) translateY(${offset}px)`;
-        // Nếu kéo xuống đủ xa thì mở thư
-        if (offset > 100) {
-          contentLetter.textContent = 'Gửi em yêu của anh.';
-          opened = true;
-          recieveBtn.style.opacity = '0.5';
-          recieveBtn.disabled = true;
-          recieveBtn.style.cursor = 'default';
-        }
-      }
-    });
-
-    document.addEventListener('mouseup', function() {
-      isDragging = false;
-      recieveBtn.style.transition = '.5s';
-      recieveBtn.style.transform = 'translateX(-50%) translateY(0)';
-    });
-  </script>
+  <div class="backgroundParty"></div>
+ 
+  <script src="index.js"></script>
 </body>
 </html>
